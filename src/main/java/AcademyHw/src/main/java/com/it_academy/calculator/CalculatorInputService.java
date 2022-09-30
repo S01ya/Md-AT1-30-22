@@ -1,18 +1,27 @@
-package AcademyHw.Calc;
+package com.it_academy.calculator;
 
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class CalculatorInputService {
+    private PrintStream printStream;
+    private Scanner scanner;
 
-    static Scanner scanner = new Scanner(System.in);
+    public CalculatorInputService(InputStream inputStream, PrintStream printStream) {
+        this.scanner = new Scanner(inputStream);
+        this.printStream = printStream;
+    }
 
-    public static double getDouble() {
-        System.out.println("Введите число");
+
+
+    public double getDouble() {
+        printStream.println("Введите число");
         double number;
         if (scanner.hasNextDouble()) {
             number = scanner.nextDouble();
         } else {
-            System.out.println("Число не распознано, попробуйте еще раз");
+            printStream.println("Число не распознано, попробуйте еще раз");
             scanner.next();
             number = getDouble();
         }
@@ -20,9 +29,10 @@ public class CalculatorInputService {
     }
 
     private static final String SOME_REGEX = "[\\*\\/+-]"; // регулярное выражение, представляющее собой любой из
+
     // доступных символов операции (или * или / или - или +), по которому потом, с пом-. метода matches происходит сравнение, а затем и валидация введенных значений пользователя
-    public static String getOperation() {
-        System.out.println("Введите операцию ");
+    public String getOperation() {
+        printStream.println("Введите операцию ");
         String text;
         String operation = null;
 
@@ -32,7 +42,7 @@ public class CalculatorInputService {
             if (text.length() == 1 && (text.matches(SOME_REGEX) == true)) {
                 operation = text;
             } else {
-                System.out.println("Вы допустили ошибку при вводе операции. Попробуйте еще раз.");
+                printStream.println("Вы допустили ошибку при вводе операции. Попробуйте еще раз.");
                 operation = getOperation();
             }
         }

@@ -1,15 +1,9 @@
-package AcademyHw.Calc;
-
-import static AcademyHw.Calc.Calculator.*;
+package com.it_academy.calculator;
 
 public class CalculatorRunner {
-    private static final String DIVIDE_REGEX = "\\/";
 
     public static Double calculate(double number1, double number2, String operation) {
-        Double result = null;
-        if (number2 == 0 && operation.matches(DIVIDE_REGEX) == true) {
-            System.out.println("Деление на ноль невозможно");
-        } else {
+       Double result = null;
             switch (operation) {
                 case "+":
                     result = Calculator.summ(number1, number2);
@@ -24,14 +18,14 @@ public class CalculatorRunner {
                     result = Calculator.divide(number1, number2);
                     break;
             }
-        }
         return result;
     }
 
     public static void main(String[] args) {
-        double number1 = CalculatorInputService.getDouble();
-        double number2 = CalculatorInputService.getDouble();
-        String operation = CalculatorInputService.getOperation();
+        CalculatorInputService service = new CalculatorInputService(System.in, System.out);
+        double number1 = service.getDouble();
+        double number2 = service.getDouble();
+        String operation = service.getOperation();
         Double result = calculate(number1, number2, operation);
 
         if (result != null) {

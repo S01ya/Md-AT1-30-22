@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.junit.platform:junit-platform-suite:${junit.platform.version.version}">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-suite/${junit.platform.version.version}/junit-platform-suite-${junit.platform.version.version}.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-suite/${junit.platform.version.version}/junit-platform-suite-${junit.platform.version.version}-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-suite/${junit.platform.version.version}/junit-platform-suite-${junit.platform.version.version}-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
