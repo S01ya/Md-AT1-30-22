@@ -13,8 +13,6 @@ public class CalculatorInputService {
         this.printStream = printStream;
     }
 
-
-
     public double getDouble() {
         printStream.println("Введите число");
         double number;
@@ -27,18 +25,15 @@ public class CalculatorInputService {
         }
         return number;
     }
-
     private static final String SOME_REGEX = "[\\*\\/+-]"; // регулярное выражение, представляющее собой любой из
-
     // доступных символов операции (или * или / или - или +), по которому потом, с пом-. метода matches происходит сравнение, а затем и валидация введенных значений пользователя
+
     public String getOperation() {
         printStream.println("Введите операцию ");
         String text;
         String operation = null;
-
         if (scanner.hasNext()) {
             text = scanner.next();
-
             if (text.length() == 1 && (text.matches(SOME_REGEX) == true)) {
                 operation = text;
             } else {

@@ -9,7 +9,7 @@ public class CalculatorRunner {
                     result = Calculator.summ(number1, number2);
                     break;
                 case "-":
-                    result = Calculator.substract(number1, number2);
+                    result = Calculator.subtract(number1, number2);
                     break;
                 case "*":
                     result = Calculator.multiply(number1, number2);

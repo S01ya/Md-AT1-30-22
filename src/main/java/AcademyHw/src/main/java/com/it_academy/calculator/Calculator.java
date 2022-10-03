@@ -7,7 +7,7 @@ public class Calculator {
         return result;
     }
 
-    public static Double substract(double number1, double number2) {
+    public static Double subtract(double number1, double number2) {
 
         double result = number1 - number2;
         return result;
